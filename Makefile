@@ -9,16 +9,24 @@ start:
 
 down:
 	docker compose down
-	
+
+ci:
+	docker compose -f docker-compose.yml up --abort-on-container-exit
+
 test:
 	docker compose -f docker-compose.yml up --abort-on-container-exit
 
-dev:
-	npm run dev
+
+ci-build:
+	docker compose -f docker-compose.yml build app
+
+push:
+	docker compose -f docker-compose.yml push app
 
 up-development:
 	docker run -p 8080:8080 -e NODE_ENV=development ramzaii/devops-for-developers-project-74 make dev
 
-ci:
-	docker compose -f docker-compose.yml up --abort-on-container-exit
+dev:
+	npm run dev
+
 	
