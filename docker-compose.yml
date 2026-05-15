@@ -1,0 +1,7 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    command: make test
+    image: ramzaii/devops-for-developers-project-74
