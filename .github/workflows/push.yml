@@ -40,4 +40,5 @@ jobs:
           context: .
           file: Dockerfile.production
           push: true
+          platforms: linux/amd64
           tags: ${{ env.APP_IMAGE_NAME }}:latest
